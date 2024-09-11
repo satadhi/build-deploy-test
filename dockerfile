@@ -16,9 +16,6 @@ COPY . .
 # Build the NestJS app
 RUN npm run build
 
-# Copy .env file to the build directory
-COPY .env /app/dist/.env
-
 # Expose the port that NestJS will run on
 EXPOSE 3000
 
