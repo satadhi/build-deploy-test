@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the NestJS app
-RUN npm run build
+RUN npx nest build
 
 # Use a smaller Node.js image for the final build
 FROM node:20.14-alpine
