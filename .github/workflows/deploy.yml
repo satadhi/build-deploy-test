@@ -58,4 +58,4 @@ jobs:
             aws ssm send-command \
               --instance-ids ${{ secrets.EC2_INSTANCE_ID }} \
               --document-name "AWS-RunShellScript" \
-              --parameters commands="docker pull ${{ steps.login-ecr.outputs.registry }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}, docker stop my-container, docker rm my-container, docker run -d --name my-container -p 80:80 ${{ steps.login-ecr.outputs.registry }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}"
+              --parameters commands="docker pull ${{ steps.login-ecr.outputs.registry }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}, docker stop my-container, docker rm my-container, docker run -d --name my-container -p 3000:3000 ${{ steps.login-ecr.outputs.registry }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}"
