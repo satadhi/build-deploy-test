@@ -49,4 +49,5 @@ jobs:
         run: | 
           # sudo cp /home/ubuntu/test-docker/docker-compose.yml .
           export DOCKER_IMAGE=$REGISTRY:$IMAGE_TAG
+          cd "${GITHUB_WORKSPACE}"
           docker-compose -f docker-compose-123.yml up -d
