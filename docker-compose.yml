@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  backend-service:
+    container_name: cavity-test
+    image: 828446050677.dkr.ecr.ap-south-1.amazonaws.com/deploy-test:9ff09d990470a7d034cd4e047ff5a42bde781140
+    ports:
+      - "3000:3000"
+    networks:
+      - server_backend
+
+networks:
+  server_backend:
+    name: server_backend
