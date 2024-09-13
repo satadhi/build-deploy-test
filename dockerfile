@@ -16,6 +16,11 @@ COPY . .
 # Build the NestJS app
 RUN npx nest build
 
+# Use a smaller Node.js image for the final build
+FROM node:20.14-alpine
+
+# Set the working directory in the container
+WORKDIR /app
 
 # Copy built application and dependencies from the builder stage
 COPY --from=builder /app/dist ./dist
