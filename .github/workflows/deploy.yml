@@ -49,4 +49,4 @@ jobs:
         run: | 
           # sudo cp /home/ubuntu/test-docker/docker-compose.yml .
           export DOCKER_IMAGE=$REGISTRY:$IMAGE_TAG
-          docker-compose up -d -f docker-compose-123.yml
+          docker-compose -f docker-compose-123.yml up -d
