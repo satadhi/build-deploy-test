@@ -1,11 +1,15 @@
 version: '3.8'
 
 services:
-  backend-service:
-    container_name: cavity-test
-    image: 828446050677.dkr.ecr.ap-south-1.amazonaws.com/deploy-test:9ff09d990470a7d034cd4e047ff5a42bde781140
+  node-app:
+    container_name: node-app
+    image: ${DOCKER_IMAGE}
+    environment:
+      NODE_ENV: 'production'
+      PORT: 3000
+      TZ: 'UTC'
     ports:
-      - "3000:3000"
+      - "3052:3052"
     networks:
       - server_backend
 

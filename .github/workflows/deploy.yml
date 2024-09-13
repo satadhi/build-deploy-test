@@ -62,4 +62,4 @@ jobs:
       - name: Trigger EC2 to pull latest Docker image
         run: | 
           sudo cp /home/ubuntu/test-docker/docker-compose.yml .
-          docker-compose up -d | echo y
+          export DOCKER_IMAGE= $REGISTRY/$REPOSITORY:$IMAGE_TAG docker-compose up
