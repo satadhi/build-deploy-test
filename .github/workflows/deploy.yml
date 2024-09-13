@@ -53,4 +53,5 @@ jobs:
           # sudo cp /home/ubuntu/test-docker/docker-compose.yml .
           export DOCKER_IMAGE=$REGISTRY:$IMAGE_TAG
           cd "${GITHUB_WORKSPACE}"
+          aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 828446050677.dkr.ecr.ap-south-1.amazonaws.com
           docker-compose -f docker-compose-123.yml up -d

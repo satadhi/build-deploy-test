@@ -4,6 +4,8 @@ services:
   deploy-test-123:
     container_name: cavity-test-deploy-123
     image: ${DOCKER_IMAGE}
+    environment:
+      NODE_ENV: 'production'
     ports:
       - "3000:3000"
     networks:
