@@ -1,15 +1,11 @@
 version: '3.8'
 
 services:
-  node-app:
-    container_name: node-app
+  deploy-test-123:
+    container_name: cavity-test-deploy-123
     image: ${DOCKER_IMAGE}
-    environment:
-      NODE_ENV: 'production'
-      PORT: 3000
-      TZ: 'UTC'
     ports:
-      - "3052:3052"
+      - "3000:3000"
     networks:
       - server_backend
 
